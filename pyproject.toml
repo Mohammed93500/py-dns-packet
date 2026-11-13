@@ -1,6 +1,6 @@
 [project]
 name = "py-dns-packet"
-version = "0.1.0"
+version = "0.1.1"
 description = "Converts structured DNS record definitions into wire-format query and response packets."
 requires-python = ">=3.10"
 dependencies = []
