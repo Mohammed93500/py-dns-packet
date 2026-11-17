@@ -45,3 +45,10 @@ passed through as raw `bytes`.
 - `DNSRecord(name, rtype, rclass=RClass.IN, ttl=0, rdata=b"")`
 - `DNSMessage(header=None, questions=None, answers=None, authorities=None, additionals=None)` — `to_bytes()` serializes the message.
 - Enums: `RType`, `RClass`, `Opcode`, `RCode`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
